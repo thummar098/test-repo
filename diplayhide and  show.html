@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+        <style>
+        #myDIV {
+
+            font-style: inherit ;
+         font-size: 35px;
+         color: rgb(0, 132, 189)
+        }
+    
+
+
+  
+  </style>
+        </head>
+<body>
+<button onclick="myFunction()">Click Me!</button>
+
+<p id="myDIV">
+THUMMAR  YAGNIK
+
+<br>
+THUMAR  SHUBHAM
+
+</p>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } 
+  else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
