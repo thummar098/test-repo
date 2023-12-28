@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>student lists</title>
+</head>
+<body>
+
+  <h2>Enter Names</h2>
+  <input type="text" id="nameInput" placeholder="Enter a name">
+  <button onclick="addName()">student Name</button>
+
+  <h2>student Names List</h2>
+  <ul id="nameList"></ul>
+
+  <script>
+    function addName() {
+      var nameInput = document.getElementById('nameInput');
+      var name = nameInput.value;
+      if (name.trim() !== '') {
+        var nameList = document.getElementById('nameList');
+        var listItem = document.createElement('li');
+        var nameText = document.createElement('span');
+        nameText.textContent = name;
+        
+        var editButton = document.createElement('button');
+        editButton.textContent = 'Edit';
+        editButton.onclick = function() {
+          var editInput = document.createElement('input');
+          editInput.type = 'text';
+          editInput.value = nameText.textContent;
+
+          editInput.onblur = function() {
+            nameText.textContent = editInput.value;
+            listItem.removeChild(editInput);
+          };
+
+          listItem.appendChild(editInput);
+          editInput.focus();
+        };
+
+        var deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.onclick = function() {
+          nameList.removeChild(listItem);
+        };
+
+        listItem.appendChild(nameText);
+        listItem.appendChild(editButton);
+        listItem.appendChild(deleteButton);
+        nameList.appendChild(listItem);
+        nameInput.value = '';
+      } else {
+        alert('Please enter a name.');
+      }
+    }
+  </script>
+
+</body>
+</html>

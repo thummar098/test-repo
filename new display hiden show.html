@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+        <style>
+        #yagnik {
+
+            font-style: inherit ;
+         font-size: 35px;
+         color: rgb(0, 132, 189)
+        }
+  </style>
+        </head>
+<body>
+    
+    <div id="yagnik">
+        THUMMAR  YAGNIK
+        <br>
+        <br>
+        THUMAR  SHUBHAM
+        
+    </div>
+    
+    <script>
+        function myFunction() {
+            
+            let btn = document.getElementById("shubham");
+            var x = document.getElementById("yagnik");
+            
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                btn.textContent = "hide me";
+            } 
+            else {
+                x.style.display = "none";
+                btn.textContent = "show me";
+                
+            }
+        }
+    </script>
+<button id="shubham"  onclick="myFunction()">hide me!</button>
+
+</body>
+</html>
